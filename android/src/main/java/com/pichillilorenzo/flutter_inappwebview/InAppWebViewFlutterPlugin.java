@@ -90,9 +90,9 @@ public class InAppWebViewFlutterPlugin implements FlutterPlugin, ActivityAware {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
       serviceWorkerManager = new ServiceWorkerManager(this);
     }
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-      credentialDatabaseHandler = new CredentialDatabaseHandler(this);
-    }
+//    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//      credentialDatabaseHandler = new CredentialDatabaseHandler(this);
+//    }
     webViewFeatureManager = new WebViewFeatureManager(this);
   }
 
