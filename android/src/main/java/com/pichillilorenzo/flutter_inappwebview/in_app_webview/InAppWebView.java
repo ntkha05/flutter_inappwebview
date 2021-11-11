@@ -313,7 +313,7 @@ final public class InAppWebView extends InputAwareWebView {
             options.preferredContentMode == PreferredContentModeOptionType.DESKTOP.toValue()) {
       setDesktopMode(true);
     }
-    settings.setSaveFormData(options.saveFormData);
+    settings.setSaveFormData(false);
     if (options.incognito)
       setIncognito(true);
     if (options.hardwareAcceleration)
@@ -502,9 +502,9 @@ final public class InAppWebView extends InputAwareWebView {
       settings.setSaveFormData(false);
     } else {
       settings.setCacheMode(WebSettings.LOAD_DEFAULT);
-      settings.setAppCacheEnabled(true);
-      settings.setSavePassword(true);
-      settings.setSaveFormData(true);
+      settings.setAppCacheEnabled(false);
+      settings.setSavePassword(false);
+      settings.setSaveFormData(false);
     }
   }
 
@@ -515,7 +515,7 @@ final public class InAppWebView extends InputAwareWebView {
       if (ctx != null) {
         settings.setAppCachePath(ctx.getCacheDir().getAbsolutePath());
         settings.setCacheMode(WebSettings.LOAD_DEFAULT);
-        settings.setAppCacheEnabled(true);
+        settings.setAppCacheEnabled(false);
       }
     } else {
       settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
@@ -854,7 +854,7 @@ final public class InAppWebView extends InputAwareWebView {
     }
 
     if (newOptionsMap.get("saveFormData") != null && options.saveFormData != newOptions.saveFormData)
-      settings.setSaveFormData(newOptions.saveFormData);
+      settings.setSaveFormData(false);
 
     if (newOptionsMap.get("incognito") != null && options.incognito != newOptions.incognito)
       setIncognito(newOptions.incognito);
